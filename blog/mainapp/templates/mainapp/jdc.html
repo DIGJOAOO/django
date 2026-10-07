@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO CABRERA</title>
+    <link rel="stylesheet" href="{% static 'background.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark barra">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Juego del Calamar</a>
+            <div class="navbar-nav ms-auto">
+                <a class="btn btn-outline-light" href="{% url 'index' %}">Home</a>
+                <a class="nav-link" href="https://github.com/DIGJOAOO/TP1-maps">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contenido-principal">
+        <section class="Intro container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'images/jdc/bubbles.png' %}" class="d-block w-100" alt="Juego de las Canicas">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'images/jdc/glases.png' %}" class="d-block w-100" alt="Juego de los Vidrios">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'images/jdc/rope.png' %}" class="d-block w-100" alt="Juego de la Cuerda">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="texto">
+                        <h1>Juego del Calamar</h1>
+                        <p>Este proyecto lo realize en un grupo de 3 y con un plazo de 4 meses.La idea fue recrear la serie del juegoo del calamar, yo hice principalmente el codigo de los juegos de la izquierda.</p>
+                        <a href="https://github.com/DIGJOAOO/TP1-maps" target="_blank" class="btn-github">
+                            <i class="fa-brands fa-github"></i>
+                            <span>Ver en GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CONTACTO: jcabreragradin@alumno.huergo.edu.ar</p>
+        <p>IG: @joaoo.c_</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

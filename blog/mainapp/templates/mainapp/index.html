@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO CABRERA</title>
+    <link rel="stylesheet" href="{% static 'background.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark barra">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Cabrera Joao</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link" href="#Descripcion">Descripción</a>
+                <a class="nav-link" href="#Proyecto">Proyectos</a>
+                <a class="nav-link" href="/blog/">Blog</a>
+            </div>
+        </div>
+    </nav>
+    <main class="contenido-principal">
+        <section class="primerRectangulo">
+            <div class="cuadroDescripcion">
+                <h1>Mi Portfolio</h1>
+                <p>Acá podes descargar mi CV, donde te muestro mis habilidades y mis proyectos más importantes.</p>
+            </div>
+            <div class="cv">
+                <a href="{% static 'images/cv.png' %}" download class="btn btn-primary">Descargar CV</a>
+            </div>
+        </section>
+        <section class="segundoRectangulo" id="Descripcion">
+            <div class="cuadroDescripcion">
+                <h2>Sobre mí</h2>
+                <p>Soy estudiante de 4to año tecnico en computación, en los ultimos 2 años realize distintos proyectos aprendiendo a usar librerias como pygame, html, css y estructuras de datos como Stack y Queue y algoritmos de busqueda.</p>
+            </div>
+        </section>
+        <section class="tercerRectangulo" id="Proyecto">
+            <div class="contenido">
+                <h2>Proyectos</h2>
+                <div class="proyectos">
+                    <a href="{% url 'jdc' %}" class="proyecto">
+                        <div class="imagenProyecto">
+                            <img src="{% static 'images/jdc/bubbles.png' %}" alt="Juego del Calamar">
+                        </div>
+                        <p>Juego del Calamar</p>
+                    </a>
+                    <a href="{% url 'mapi' %}" class="proyecto">
+                        <div class="imagenProyecto">
+                            <img src="{% static 'images/mapi/git.png' %}" alt="Mapi">
+                        </div>
+                        <p>Mapi</p>
+                    </a>
+                    <a href="{% url 'pkmn' %}" class="proyecto">
+                        <div class="imagenProyecto">
+                            <img src="{% static 'images/pkmn/menu.png' %}" alt="Pokemon Terminal">
+                        </div>
+                        <p>Pokemon Terminal</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>CONTACTO: jcabreragradin@alumno.huergo.edu.ar</p>
+        <p>IG: @joaoo.c_</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

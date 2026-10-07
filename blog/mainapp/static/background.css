@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background: linear-gradient(135deg, #020b16, #06213b, #031222);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.contenido-principal {
+    flex: 1 0 auto;
+}
+.barra {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1400px;
+    padding: 12px 30px;
+    background-color: rgba(3, 16, 31, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    z-index: 2000;
+    backdrop-filter: blur(8px);
+}
+.navbar-brand {
+    font-size: 24px;
+    color: white !important;
+    letter-spacing: 2px;
+}
+.nav-link {
+    color: white !important;
+    font-size: 18px;
+    margin-left: 30px;
+    transition: 0.2s;
+}
+.nav-link:hover {
+    color: #a8cfff !important;
+}
+.Intro {
+    padding: 150px 60px 80px;
+}
+.Intro .row {
+    row-gap: 40px;
+}
+#carouselExample {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgba(3, 16, 31, 0.65);
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.texto {
+    color: #ffffff;
+}
+.texto h1 {
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.texto p {
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 26px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #1f2937, #0d1117);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.btn-github i {
+    font-size: 20px;
+    transition: transform 0.25s ease;
+}
+.btn-github:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #2b3644, #14181f);
+    border-color: rgba(168, 207, 255, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(168, 207, 255, 0.25);
+}
+.btn-github:hover i {
+    transform: rotate(-8deg) scale(1.1);
+}
+.btn-github:active {
+    transform: translateY(-1px);
+}
+.primerRectangulo {
+    width: 100%;
+    min-height: 500px;
+    padding: 150px 80px 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 2px solid white;
+    background: linear-gradient(120deg, #03101f, #0a3155);
+}
+.presentacion {
+    width: 65%;
+}
+.presentacion h1 {
+    font-size: 65px;
+    margin: 0 0 25px;
+    color: white;
+    font-weight: bold;
+}
+.presentacion p {
+    max-width: 750px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 22px;
+    line-height: 1.6;
+    color: white;
+    margin: 0;
+}
+.cv {
+    padding-top: 5px;
+}
+.cv .btn {
+    font-size: 20px;
+    padding: 12px 25px;
+}
+.segundoRectangulo {
+    width: 100%;
+    min-height: 450px;
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background: linear-gradient(120deg, #061a2e, #0b365c);
+    border-bottom: 2px solid white;
+}
+.cuadroDescripcion {
+    width: 55%;
+    max-width: 850px;
+    padding: 40px 50px;
+    background-color: rgba(3, 16, 31, 0.65);
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.cuadroDescripcion h2 {
+    color: white;
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+.cuadroDescripcion p {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: white;
+    margin: 0;
+}
+.imagenDescripcion {
+    width: 35%;
+    max-width: 450px;
+    height: 300px;
+    overflow: hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(3, 16, 31, 0.65);
+}
+.imagenDescripcion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.tercerRectangulo {
+    width: 100%;
+    min-height: 500px;
+    padding: 80px 60px;
+    background: linear-gradient(120deg, #03101f, #0a3155);
+    border-bottom: 2px solid white;
+}
+.contenido {
+    max-width: 1100px;
+    margin: auto;
+}
+.contenido h2 {
+    color: white;
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+.proyectos {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+}
+.proyecto {
+    width: 33.33%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.imagenProyecto {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.imagenProyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.proyecto:hover .imagenProyecto img {
+    transform: scale(1.15);
+}
+.proyecto p {
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    background-color: #010812;
+    color: white;
+}
+footer p {
+    margin: 5px 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+    .barra {
+        padding: 15px 20px;
+    }
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    .nav-link {
+        margin-left: 0;
+    }
+    .Intro {
+        padding: 140px 25px 50px;
+    }
+    .carousel-item img {
+        max-height: 50vh;
+    }
+    .texto h1 {
+        font-size: 34px;
+    }
+    .primerRectangulo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 150px 30px 60px;
+    }
+    .presentacion {
+        width: 100%;
+    }
+    .presentacion h1 {
+        font-size: 45px;
+    }
+    .presentacion p {
+        font-size: 19px;
+    }
+    .segundoRectangulo {
+        padding: 50px 25px;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .cuadroDescripcion {
+        width: 100%;
+        padding: 35px 25px;
+    }
+    .cuadroDescripcion h2 {
+        font-size: 35px;
+    }
+    .cuadroDescripcion p {
+        font-size: 18px;
+    }
+    .imagenDescripcion {
+        width: 100%;
+        max-width: none;
+        height: 280px;
+    }
+    .tercerRectangulo {
+        padding: 60px 30px;
+    }
+    .proyectos {
+        flex-direction: column;
+    }
+    .proyecto {
+        width: 100%;
+    }
+    .imagenProyecto {
+        height: 280px;
+    }
+}
+
