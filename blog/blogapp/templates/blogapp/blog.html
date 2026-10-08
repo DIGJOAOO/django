@@ -16,8 +16,44 @@
             padding: 24px;
             margin-bottom: 24px;
         }
-        .post h2 { color: #a8cfff; margin: 0 0 12px; }
+        .blog, .blog h1, .blog h2, .blog p, .blog a { color: #ffffff !important; }
+        .post h2 { margin: 0 0 12px; }
         .post p { margin: 0; line-height: 1.6; white-space: pre-line; }
+        .fotos { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+        .fotos img {
+            max-width: 100%;
+            max-height: 420px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            object-fit: contain;
+        }
+        .orden { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+        .orden a {
+            padding: 6px 16px;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            transition: 0.2s;
+        }
+        .orden a:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.1); }
+        .orden a.activo { border-color: #ffffff; background: rgba(255, 255, 255, 0.2); }
+        .like-form { margin-top: 16px; }
+        .btn-like {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            font-size: 16px;
+            color: #ffffff;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-like:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.1); }
+        .btn-like.activo { background: rgba(255, 255, 255, 0.2); border-color: #ffffff; }
+        footer, footer p { color: #ffffff; }
     </style>
 </head>
 <body>
@@ -34,10 +70,29 @@
     <main class="contenido-principal">
         <section class="blog">
             <h1 class="mb-4">Blog</h1>
+            <div class="orden">
+                <span>Ordenar por:</span>
+                <a href="?orden=recientes" class="{% if orden == 'recientes' %}activo{% endif %}">Más recientes</a>
+                <a href="?orden=antiguos" class="{% if orden == 'antiguos' %}activo{% endif %}">Menos recientes</a>
+            </div>
             {% for post in posts %}
-                <article class="post">
+                <article class="post" id="post-{{ post.pk }}">
                     <h2>{{ post.titulo }}</h2>
                     <p>{{ post.descripcion }}</p>
+                    {% if post.fotos.all %}
+                        <div class="fotos">
+                            {% for foto in post.fotos.all %}
+                                <img src="{{ foto.imagen.url }}" alt="{{ post.titulo }}">
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <form method="post" action="{% url 'like' post.pk %}" class="like-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                        <button type="submit" class="btn-like {% if post.liked %}activo{% endif %}">
+                            {% if post.liked %}&#9829;{% else %}&#9825;{% endif %} Me gusta ({{ post.total_likes }})
+                        </button>
+                    </form>
                 </article>
             {% empty %}
                 <p>Todavía no hay posts.</p>
